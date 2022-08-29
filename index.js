@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.use('/api/v1',dataRoutes);
+app.use(dataRoutes);
 
 
 app.get('/', (req, res) => {

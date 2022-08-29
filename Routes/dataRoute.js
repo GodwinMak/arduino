@@ -2,7 +2,7 @@ const router = require("express").Router();
 const {postData, getdata} = require("../Controllers/dataController");
 
  router
-    .route('/data')
+    .route('/')
     .post(postData)
     .get(getdata);
     // .put()
