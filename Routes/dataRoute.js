@@ -3,9 +3,12 @@ const {postData, getdata} = require("../Controllers/dataController");
 
  router
     .route('/data')
-    .post(postData)
-    .get(getdata);
+    .post(postData);
     // .put()
     // .delete()
+
+ router
+ .route('/getdata')
+ .get(getdata);    
 
 module.exports= router;
