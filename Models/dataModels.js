@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const DataSchema = new mongoose.Schema({
+  objectName: {
+    type: String,
+    required: true
+  },
   latitude:{
     type: String,
     required: true

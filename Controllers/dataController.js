@@ -4,10 +4,11 @@ const Data = require('../Models/dataModels');
 exports.postData =async (req,res,next) =>{
    try {
 
-     const {latitude, longitude} = req.body;
+     const {objectName,latitude, longitude} = req.body;
      const data = await Data.create({
-          latitude,
-          longitude,
+        objectName,
+        latitude,
+        longitude,
      });
 
      return res.json({status: true, data});
