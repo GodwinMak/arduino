@@ -18,19 +18,19 @@ exports.postData =async (req,res,next) =>{
    }
 }
 
-exports.getdata = async (req, res, next) =>{
-     try{
-        const data = await Data.find();
+
+ 
+exports.getAnimal = async (req,res,next) =>{
+    try {
+        
+        const data = await Data.find()
 
         return res.status(200).json({
             success: true,
-            count: data.length,
             data: data
         })
-    } catch(err){
-        return res.status(500).json({
-            success: false,
-            error: "Sever Error"
-        })
+    } catch (error) {
+        next(error);
     }
+    
 }

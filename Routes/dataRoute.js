@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {postData, getdata} = require("../Controllers/dataController");
+const {postData, getdata, getAnimal} = require("../Controllers/dataController");
 
  router
     .route('/data')
@@ -7,8 +7,12 @@ const {postData, getdata} = require("../Controllers/dataController");
     // .put()
     // .delete()
 
+//  router
+//  .route('/getdata/:objectName')
+//  .get(getdata);
+ 
  router
- .route('/getdata')
- .get(getdata);    
+ .route("/getdata")
+ .get(getAnimal);
 
 module.exports= router;

@@ -19,6 +19,5 @@ const DataSchema = new mongoose.Schema({
     }  
 })
 
-// DataSchema.index({Data: 1}, {unique: true})
 
 module.exports =mongoose.model('Data', DataSchema)
