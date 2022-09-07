@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 
 
-const dataRoutes = require('./Routes/dataRoute')
+const dataRoutes = require('./Routes/dataRoute');
+const userRoutes = require('./Routes/userRoute');
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(cors());
 
 
 app.use('/api/v1',dataRoutes);
+app.use('/api/v1', userRoutes);
 
 
 app.get('/', (req, res) => {
