@@ -13,7 +13,7 @@ const app = express();
 require('dotenv').config({ path: './.env' });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
