@@ -10,7 +10,7 @@ exports.sign = async (req,res,next) =>{
     try {
 
         const {username, email, password} = req.body;
-        const usenameCheck = await animalControlUser.findOne({username});
+        const usenameCheck = await AnimalControlUser.findOne({username});
 
         if(usenameCheck){
             return res.json({msg: " user name already exist", status: false});
