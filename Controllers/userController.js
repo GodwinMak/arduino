@@ -1,4 +1,4 @@
-const Users = require("../Models/userModel");
+const AnimalControlUser = require("../Models/userModel");
 const brcypt = require("bcrypt");
 
 
@@ -18,14 +18,14 @@ exports.sign = async (req,res,next) =>{
 
         const hashedPassword = await brcypt.hash(password, 10);
 
-        const user = await Users.create({
+        const animalControlUser = await AnimalControlUser.create({
             username,
             email,
             password: hashedPassword,
         });
 
         delete user.password;
-        return res.json({status: true, user});
+        return res.json({status: true, animalControlUser});
 
     } catch (error) {
         next(error);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const userSchema = new mongoose.Schema({
+const animalControlUserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -25,4 +25,4 @@ const userSchema = new mongoose.Schema({
 })
 
 
-module.exports=mongoose.model("Users",userSchema);
+module.exports=mongoose.model("AnimalControlUser",animalControlUserSchema);
