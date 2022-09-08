@@ -24,7 +24,7 @@ exports.sign = async (req,res,next) =>{
             password: hashedPassword,
         });
 
-        delete user.password;
+        delete animalControlUser.password;
         return res.json({status: true, animalControlUser});
 
     } catch (error) {
@@ -39,17 +39,17 @@ exports.login = async (req, res, next) =>{
 
     try{
         const {username, password} = req.body;
-        const user = await Users.findOne({username});
-        if(!user){
+        const animalControlUser = await AnimalControlUser.findOne({username});
+        if(!animalControlUser){
             return res.json({msg: "incorrect username or password", status: false});
         }
-        const isPasswordValid = await brcypt.compare(password, user.password);
+        const isPasswordValid = await brcypt.compare(password, animalControlUser.password);
         if(!isPasswordValid){
             return res.json({msg: "incorrect username or password", status: false});
         }
-        delete user.password
+        delete animalControlUser.password
         
-        return res.json({status: true, user});
+        return res.json({status: true, animalControlUser});
     }catch(error){
         next(error);
     }
@@ -60,12 +60,12 @@ exports.login = async (req, res, next) =>{
 // @access Public
 exports.getUsers = async (req, res, next)=>{
     try{
-        const user = await Users.find();
+        const animalControlUser = await AnimalControlUser.find();
 
         return res.status(200).json({
             success: true,
-            count: user.length,
-            data: user
+            count: animalControlUser.length,
+            data: animalControlUser
         })
     } catch(err){
         return res.status(500).json({
