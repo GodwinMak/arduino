@@ -42,7 +42,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    orgin: "http://localhost:3000",
+    orgin: "https://animaltracking.netlify.app",
     methods: ["GET", "POST"]
   }
 })
