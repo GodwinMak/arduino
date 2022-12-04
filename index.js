@@ -4,10 +4,8 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 
-
 const dataRoutes = require('./Routes/dataRoute');
 const userRoutes = require('./Routes/userRoute');
-
 
 const app = express();
 require('dotenv').config({ path: './.env' });
@@ -17,8 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
-
-
 
 app.use('/api/v1',dataRoutes);
 app.use('/api/v1', userRoutes);
